@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "provenance": true
+  },
   "bugs": {
     "url": "https://github.com/joschka/release-test/issues"
   },
