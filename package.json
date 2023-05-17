@@ -20,9 +20,6 @@
   "dependencies": {
     "lodash": "^4.17.21"
   },
-  "release": {
-    "branches": ["main"]
-  },
   "devDependencies": {
     "semantic-release": "^21.0.2"
   }
