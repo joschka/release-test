@@ -19,5 +19,8 @@
   "homepage": "https://github.com/joschka/release-test#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "semantic-release": "^21.0.2"
   }
 }
