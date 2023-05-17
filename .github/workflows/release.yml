@@ -18,6 +18,7 @@ jobs:
           scope: "@digitalservice4germany"
           cache: npm
       - run: npm install
+      - run: cp package.json dist/
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
