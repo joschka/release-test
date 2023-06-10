@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cp src/index.js package.json dist",
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "publishConfig": {
     "provenance": true
   },
@@ -20,9 +21,6 @@
     "url": "https://github.com/joschka/release-test/issues"
   },
   "homepage": "https://github.com/joschka/release-test#readme",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^21.0.2"

@@ -1,6 +1,11 @@
 name: Release
 
+# setup the workflow trigger(s) according to your needs
+# see: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
 on:
+  push:
+    branches: ["main"]
+  # manual
   workflow_dispatch:
 
 jobs:
@@ -14,13 +19,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org
+          #registry-url: https://registry.npmjs.org
           scope: "@digitalservice4germany"
-          cache: npm
       - run: npm install
-      - run: cp package.json dist/
+      - run: npm run build
+      - run: npm test
       - name: Release
+        run: cd dist && npx semantic-release --branches main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # create NPM_TOKEN repository secret (repo settings -> secrets and variables)
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: cd dist && npx semantic-release --branches main
