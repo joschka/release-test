@@ -1,6 +1,6 @@
 # npm-package-example
 
-Minimal starting point for creating a npm package which can be released with one manual click or (if applicable) triggered automatically by an event. Requires conventional commits!
+Minimal starting point for creating a DigitalService npm package which can be released with one manual click or (if applicable) triggered automatically by an event. Requires consistent usage of conventional commits!
 
 ## Enabler: conventional commits
 
@@ -12,11 +12,11 @@ Putting in the effort to write machine readable commits at commit time frees us 
 
 ## Assumption: `dist` folder is released
 
-Assumption: you have some kind of build step and you want to release only your build artifact (`dist` folder). Make sure to have a `package.json` in the `dist` folder before releasing.
+Assumption: you have some kind of build step and you want to release only your build artifact (`dist` folder). Make sure to have a `package.json` in the `dist` folder before releasing. Feel free to adapt if your package is different.
 
 ## Good to know: package.json version
 
-The `"version"` field in the `package.json` *in the repository* is never updated. It's always `"0.0.0-development"`. The *published* `package.json` though contains the version.
+The `"version"` field in the `package.json` *in the repository* is never updated. It's always `"0.0.0-development"`. The *published* `package.json` though contains the correct current version. You never have to set a version string anywhere.
 
 ## Good to have: npm package provenance
 
@@ -36,11 +36,16 @@ Magically simple releasing only works with correct conventional commits. You mus
 
 ## Checklist
 
-In case you just want to cherry pick for your exisiting package.
+In case you just want to cherry pick for your existing package.
 
 * `package.json`: set `"version"` to `"0.0.0-development"` (optional, but recommended)
 * `package.json`: add `"publishConfig": { "provenance": true }` (optional, but recommended)
 * repository settings: add a `NPM_TOKEN` repository secret (repo -> settings -> secrets and variables -> actions -> new repository secret). Find the value in 1Password ("NPM"), look for "Publish Token", its value starts with "npm_"
 * copy `.github/workflows/release.yml` and adapt to your needs. Make sure to not remove permissions and too keep the configuration of the `setup-node` action.
 * `npm install --save-dev semantic-release`
+
+### for linting
+
+* `npm install --save-dev @commitlint/cli @commitlint/config-conventional` + configuration in `commitlint.config.js`
+* `npm install --save-dev lefthook` + configuration in `lefthook.yml`
 
