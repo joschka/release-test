@@ -22,12 +22,6 @@
   },
   "homepage": "https://github.com/joschka/release-test#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^21.0.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
