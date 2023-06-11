@@ -1,4 +1,4 @@
-# release-npm-package
+# npm-package-example
 
 Minimal starting point for creating a npm package which can be released with one manual click or (if applicable) triggered automatically by an event. Requires conventional commits!
 
