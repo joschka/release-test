@@ -30,6 +30,10 @@ Make sure to have the following config on your `package.json` to enable npm pack
 },
 ```
 
+## Mandatory: commit message linting
+
+Magically simple releasing only works with correct conventional commits. You must always use them! That's why linting is basically mandatory. This example uses `commitlint` with `lefthook` as one possible way.
+
 ## Checklist
 
 In case you just want to cherry pick for your exisiting package.
